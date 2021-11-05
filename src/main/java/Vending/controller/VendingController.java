@@ -90,7 +90,7 @@ public class VendingController {
         return view.enterOrExit();
     }
 
-    private void updateStock(String purchaseName) throws VendingPersistenceException, OutOfStockException, VendingDataValidationException {
+    public void updateStock(String purchaseName) throws VendingPersistenceException, OutOfStockException, VendingDataValidationException {
         Item purchase = service.getItem(purchaseName);
         if (purchase.getNumberOf() != 0) {
             service.updateStock(purchaseName, purchase);
